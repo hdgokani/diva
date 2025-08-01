@@ -11,7 +11,7 @@ on:
 jobs:
   sca-scan:
     name: Run Checkmarx AST Scan using CLI
-    runs-on: eks-prod
+    runs-on: ubuntu-latest
     env:
       ACTIONS_RUNNER_DEBUG: true
       ACTIONS_STEP_DEBUG: true
