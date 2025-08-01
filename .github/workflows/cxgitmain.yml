@@ -1,0 +1,35 @@
+name: Checkmarx SCA Scan
+ 
+on:
+  push:
+    branches:
+      [main, master]
+  pull_request:
+    branches:
+      [main, master]
+ 
+jobs:
+  sca-scan:
+    name: Run Checkmarx AST Scan using CLI
+    runs-on: eks-prod
+    env:
+      ACTIONS_RUNNER_DEBUG: true
+      ACTIONS_STEP_DEBUG: true
+ 
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+ 
+ 
+      - name: Checkmarx AST Github Action
+        uses: myactions/ast-github-action@2.3.22
+        with:
+          base_uri: https://eu.ast.checkmarx.net
+          cx_tenant: ast_abdul_ansari
+          cx_client_id: HarshG
+          cx_client_secret: QvtZSbiAK8gBhOMe8h278R9OBT2t37xT
+          project_name: lead-service
+          additional_params: --debug --insecure
+          --report-format: sbom
+          --report-sbom-format: CycloneDxJson
+          --thresold: "sca-critical=100"
