@@ -22,7 +22,7 @@ jobs:
  
  
       - name: Checkmarx AST Github Action
-        uses: checkmarx/ast-github-action@latest
+        uses: actions/checkout@v3
         with:
           base_uri: https://eu.ast.checkmarx.net
           cx_tenant: ast_abdul_ansari
