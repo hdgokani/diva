@@ -22,14 +22,14 @@ jobs:
  
  
       - name: Checkmarx AST Github Action
-        uses: actions/ast-github-action@2.3.22
+        uses: actions/download-artifact@v4
         with:
           base_uri: https://eu.ast.checkmarx.net
           cx_tenant: ast_abdul_ansari
           cx_client_id: HarshG
           cx_client_secret: QvtZSbiAK8gBhOMe8h278R9OBT2t37xT
-          project_name: lead-service
-          additional_params: --debug --insecure
+          project_name: GitCICD
+#          additional_params: --debug --insecure
           --report-format: sbom
           --report-sbom-format: CycloneDxJson
           --thresold: "sca-critical=100"
