@@ -52,3 +52,4 @@ jobs:
          base_uri: https://eu.ast.checkmarx.net/
          cx_client_id: HarshG
          cx_client_secret: QvtZSbiAK8gBhOMe8h278R9OBT2t37xT
+         additional_params: --sca-resolver "C:\Checkmarx\ScaResolver-win64" --scan-types sca
